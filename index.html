@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexForge • Websites That Convert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        
+        :root {
+            --primary: #6366f1;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header {
+            font-size: 3.2rem;
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .nav-scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+        }
+
+        .animated-gradient {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #6366f1);
+            background-size: 200% 100%;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 200% 50%; }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .modern-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .modern-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 70px -15px rgb(0 0 0 / 0.15);
+        }
+
+        .nav-link {
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #6366f1;
+        }
+
+        .fact-card {
+            transition: transform 0.4s cubic-bezier(0.23, 1.0, 0.32, 1);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .website-mockup {
+            box-shadow: 0 25px 70px -15px rgb(15 23 42 / 0.25);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .metric {
+            font-size: 3.75rem;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-950 overflow-x-hidden">
+    <!-- NAV -->
+    <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-screen-xl mx-auto px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-indigo-600 rounded-2xl flex items-center justify-center">
+                        <span class="text-white text-3xl font-black tracking-tighter">A</span>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl font-semibold tracking-tighter">ApexForge</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#why" class="nav-link text-slate-600 hover:text-slate-900">Why now</a>
+                    <a href="#results" class="nav-link text-slate-600 hover:text-slate-900">Results</a>
+                    <a href="#how" class="nav-link text-slate-600 hover:text-slate-900">How it works</a>
+                    <a href="#cost" class="nav-link text-slate-600 hover:text-slate-900">Cost of waiting</a>
+                </div>
+                
+                <div class="flex items-center gap-x-3">
+                    <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-5 py-2.5 text-sm font-semibold rounded-2xl border border-slate-900 hover:bg-slate-900 hover:text-white transition-all">
+                        Book a call
+                    </button>
+                    <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-5 py-2.5 bg-slate-900 text-white rounded-2xl text-sm font-semibold flex items-center gap-x-2 hover:bg-black transition-colors">
+                        <span>Get started</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero-bg pt-20 min-h-screen flex items-center relative">
+        <div class="max-w-screen-xl mx-auto px-8 pt-12 pb-20">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 px-4 h-9 bg-white/10 text-white backdrop-blur-xl rounded-3xl text-sm mb-6 border border-white/20">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="font-medium">2026's highest converting websites</span>
+                </div>
+                
+                <h1 class="text-white text-7xl leading-none font-display font-bold tracking-[-4.5px]">
+                    Websites that<br>
+                    <span class="gradient-text">actually convert.</span>
+                </h1>
+                
+                <p class="mt-7 max-w-lg text-xl text-white/75">
+                    We build beautiful, high-performance websites that turn visitors into customers. 
+                    Trusted by fast-growing startups and ambitious founders.
+                </p>
+                
+                <div class="flex items-center gap-x-4 mt-10">
+                    <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-9 py-4 bg-white text-slate-950 font-semibold rounded-3xl flex items-center gap-x-3 hover:bg-white/90 active:scale-[0.985] transition-all text-base shadow-xl">
+                        Start your project
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    
+                    <button onclick="document.getElementById('results').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 text-white font-semibold flex items-center gap-x-3 group">
+                        <div class="w-11 h-11 border border-white/40 group-hover:border-white/70 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-play text-sm"></i>
+                        </div>
+                        <span class="font-medium">Watch 1:42 video</span>
+                    </button>
+                </div>
+                
+                <div class="mt-16 flex items-center">
+                    <div class="flex -space-x-3 pr-4">
+                        <img src="https://i.pravatar.cc/28?img=28" class="w-7 h-7 border-2 border-slate-800 rounded-full" alt="">
+                        <img src="https://i.pravatar.cc/28?img=32" class="w-7 h-7 border-2 border-slate-800 rounded-full" alt="">
+                        <img src="https://i.pravatar.cc/28?img=47" class="w-7 h-7 border-2 border-slate-800 rounded-full" alt="">
+                        <img src="https://i.pravatar.cc/28?img=40" class="w-7 h-7 border-2 border-slate-800 rounded-full" alt="">
+                    </div>
+                    <div class="text-white/70 text-sm">
+                        <span class="font-semibold text-white">217 founders</span> launched in the last 30 days
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hero visual -->
+        <div class="hidden xl:block absolute right-12 top-1/2 -translate-y-1/3 w-[480px]">
+            <div class="website-mockup bg-white rounded-3xl p-4 shadow-2xl border border-white/10">
+                <div class="bg-slate-900 rounded-2xl overflow-hidden">
+                    <!-- Mock browser bar -->
+                    <div class="bg-slate-800 px-4 py-3 flex items-center justify-between">
+                        <div class="flex items-center gap-x-1.5">
+                            <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
+                            <div class="w-2.5 h-2.5 bg-yellow-400 rounded-full"></div>
+                            <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full"></div>
+                        </div>
+                        <div class="text-xs text-slate-500 font-mono tracking-widest">apexforge.dev</div>
+                    </div>
+                    
+                    <!-- Hero mock site -->
+                    <div class="bg-white p-6">
+                        <div class="flex justify-between mb-3 items-end">
+                            <div>
+                                <div class="font-display text-4xl font-semibold tracking-tighter">Vesper AI</div>
+                                <div class="text-emerald-600 text-sm font-semibold">↑ 312% revenue</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-slate-400">THIS MONTH</div>
+                                <div class="text-3xl font-semibold tabular-nums">$184,300</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between text-xs pt-4">
+                            <div class="px-4 py-3 bg-emerald-50 text-emerald-700 font-semibold text-center rounded-2xl flex-1 mr-2">
+                                <div class="text-[10px]">CONVERSION</div>
+                                <div class="font-black text-xl tabular-nums">14.8%</div>
+                            </div>
+                            <div class="px-4 py-3 bg-indigo-600 text-white font-semibold text-center rounded-2xl flex-1">
+                                <div class="text-[10px]">AVG. ORDER</div>
+                                <div class="font-black text-xl tabular-nums">$412</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRUST BAR -->
+    <div class="max-w-screen-xl mx-auto px-8 py-12 border-b border-slate-200">
+        <div class="flex justify-between items-center flex-wrap gap-8 opacity-75">
+            <div class="flex items-center gap-x-10">
+                <div class="font-semibold text-sm text-slate-400">FEATURED IN</div>
+                <div>YC</div>
+                <div>TechCrunch</div>
+                <div>Product Hunt</div>
+            </div>
+            <div class="font-semibold text-sm text-slate-400">TRUSTED BY 340+ STARTUPS</div>
+        </div>
+    </div>
+
+    <!-- WHY SECTION -->
+    <div id="why" class="max-w-screen-xl mx-auto px-8 pt-24 pb-16">
+        <div class="max-w-2xl">
+            <div class="text-emerald-600 font-semibold text-sm tracking-[1.5px]">THE NEW REALITY</div>
+            <h2 class="section-header mt-3">If your business<br>doesn't have a website,<br>you're already losing.</h2>
+        </div>
+        
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+            <!-- Pain cards -->
+            <div class="fact-card rounded-3xl border border-slate-200 p-8 group">
+                <div class="w-12 h-12 bg-red-50 text-red-600 flex items-center justify-center rounded-2xl mb-6">
+                    <i class="fa-solid fa-users text-3xl"></i>
+                </div>
+                <div class="font-semibold text-2xl tracking-tighter">76% of buyers</div>
+                <p class="mt-2 text-slate-600">judge a company's credibility solely based on its website.</p>
+                <div class="mt-6 text-red-500 text-sm flex items-center">
+                    <span class="font-semibold">Without a site, you look unprofessional.</span>
+                </div>
+            </div>
+            
+            <div class="fact-card rounded-3xl border border-slate-200 p-8 group">
+                <div class="w-12 h-12 bg-red-50 text-red-600 flex items-center justify-center rounded-2xl mb-6">
+                    <i class="fa-solid fa-chart-line text-3xl"></i>
+                </div>
+                <div class="font-semibold text-2xl tracking-tighter">94% of B2B buyers</div>
+                <p class="mt-2 text-slate-600">say they research online before contacting vendors.</p>
+                <div class="mt-6 text-red-500 text-sm">If you’re not showing up, you’re invisible.</div>
+            </div>
+            
+            <div class="fact-card rounded-3xl border border-slate-200 p-8 group">
+                <div class="w-12 h-12 bg-red-50 text-red-600 flex items-center justify-center rounded-2xl mb-6">
+                    <i class="fa-solid fa-handshake text-3xl"></i>
+                </div>
+                <div class="font-semibold text-2xl tracking-tighter">You’re losing money.</div>
+                <p class="mt-2 text-slate-600">Every day without a professional website, competitors capture the leads and revenue that should be yours.</p>
+                <div class="text-red-600 text-sm mt-4">Average daily loss: <span class="font-bold">$1,200–$4,800</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULTS / TRUST BUILDERS -->
+    <div id="results" class="max-w-screen-xl mx-auto px-8 py-24 bg-slate-900 text-white rounded-[3rem]">
+        <div class="px-6">
+            <div class="max-w-xl">
+                <div class="font-semibold text-emerald-400 text-sm tracking-[1px]">REAL RESULTS FROM REAL CLIENTS</div>
+                <h2 class="text-white text-5xl font-display font-semibold tracking-[-2.5px] mt-3 leading-none">Websites that make you money.</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6 pt-14">
+                <div class="bg-white/5 border border-white/10 rounded-3xl px-8 py-9">
+                    <div class="font-mono text-emerald-400 text-xs font-bold tracking-[1.5px]">AVERAGE RESULT</div>
+                    <div class="metric mt-4 text-white tabular-nums" data-target="241">0</div>
+                    <div class="text-emerald-300 font-medium">increase in leads</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-3xl px-8 py-9">
+                    <div class="font-mono text-emerald-400 text-xs font-bold tracking-[1.5px]">AVERAGE RESULT</div>
+                    <div class="metric mt-4 text-white tabular-nums" data-target="2.8">0</div>
+                    <div class="text-emerald-300 font-medium">average ROI in first 90 days</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-3xl px-8 py-9">
+                    <div class="font-mono text-emerald-400 text-xs font-bold tracking-[1.5px]">AVERAGE RESULT</div>
+                    <div class="metric mt-4 text-white tabular-nums" data-target="17">0</div>
+                    <div class="text-emerald-300 font-medium">pages built per average project</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-3xl px-8 py-9">
+                    <div class="font-mono text-emerald-400 text-xs font-bold tracking-[1.5px]">AVERAGE RESULT</div>
+                    <div class="metric mt-4 text-white tabular-nums" data-target="4.9">0</div>
+                    <div class="text-emerald-300 font-medium">Google Lighthouse score</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div id="how" class="max-w-screen-xl mx-auto px-8 py-24">
+        <div class="max-w-xl">
+            <div class="uppercase tracking-widest text-xs font-bold text-slate-400">PROVEN 3-WEEK PROCESS</div>
+            <h2 class="text-6xl tracking-[-3.5px] leading-none font-display font-bold">From zero to<br>launched website.</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-x-6 pt-14">
+            <!-- Step 1 -->
+            <div class="scroll-reveal">
+                <div class="flex items-center gap-3">
+                    <div class="text-7xl font-display font-bold text-indigo-100">01</div>
+                    <div>
+                        <div class="font-bold">Discovery Sprint</div>
+                        <div class="text-sm text-slate-600">1 day intensive research into your customer behaviour and competitors</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-reveal">
+                <div class="flex items-center gap-3 pt-4">
+                    <div class="text-7xl font-display font-bold text-indigo-100">02</div>
+                    <div>
+                        <div class="font-bold">Design & Development sprint</div>
+                        <div class="text-sm text-slate-600">We craft a stunning brand-aligned website that is light years ahead of the competition.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-reveal">
+                <div class="flex items-center gap-3 pt-4">
+                    <div class="text-7xl font-display font-bold text-indigo-100">03</div>
+                    <div>
+                        <div class="font-bold">Launch & Optimize</div>
+                        <div class="text-sm text-slate-600">We push your site live and provide CRO recommendations to increase conversions week after week.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THE COST OF INACTION -->
+    <div id="cost" class="bg-slate-950 text-white py-20">
+        <div class="max-w-screen-xl mx-auto px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-block px-3 py-1 text-xs text-red-400 tracking-widest font-medium mb-2">THE REAL PRICE FOR DOING NOTHING</div>
+                <h3 class="text-6xl font-display tracking-[-2.8px]">The longer you wait,<br>the more you lose.</h3>
+                
+                <div class="max-w-2xl mx-auto pt-8 text-lg text-white/70">
+                    Every week you go without a modern professional website, you are giving away customers to companies who already have one.
+                </div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="bg-zinc-900 p-8 rounded-3xl border border-white/10">
+                    <div>Every month you delay:</div>
+                    <div class="mt-6">
+                        <div class="font-display text-[3.1rem] font-extrabold tabular-nums tracking-tight">-12,400</div>
+                        <div class="text-red-400 font-bold">- visits you could have captured</div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-3xl border border-white/10">
+                    <div>Competitors who launch this month:</div>
+                    <div class="mt-6">
+                        <div class="font-display text-[3.1rem] font-extrabold tabular-nums tracking-tight">73%</div>
+                        <div class="text-red-400 font-bold">take your potential customers</div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-3xl border border-white/10">
+                    <div>Estimated missed revenue:</div>
+                    <div class="mt-6">
+                        <div class="text-emerald-400 font-display text-[3.1rem] font-extrabold tracking-tight">$18k – $63k</div>
+                        <div class="text-red-400 font-bold">in the next 90 days alone</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-10 text-center">
+                <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })" 
+                        class="font-semibold inline-flex items-center gap-x-2 bg-white text-black px-9 h-14 rounded-3xl active:scale-[0.985] transition-all text-lg">
+                    Stop losing money today &rarr;
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="max-w-screen-xl mx-auto px-8 py-20">
+        <div class="text-center pb-10">
+            <div class="font-semibold text-emerald-600 text-xs">DON'T TAKE OUR WORD FOR IT</div>
+            <div class="font-display text-6xl tracking-tighter font-semibold">Founders are seeing real results.</div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="modern-card rounded-3xl border border-slate-200 bg-white p-8">
+                <div class="flex gap-1 text-amber-500 mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="leading-snug">"ApexForge completely transformed our business. Our monthly leads grew from 30 to 280. I wish we started sooner."</p>
+                <div class="pt-6 text-sm">
+                    <div class="font-semibold">Rachel Torres</div>
+                    <div class="text-slate-500">Founder & CEO, Vesper Labs</div>
+                </div>
+            </div>
+            
+            <div class="modern-card rounded-3xl border border-slate-200 bg-white p-8">
+                <div class="flex gap-1 text-amber-500 mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="leading-snug">"Our site now converts better than our previous site did in 2 years. Incredible team and results."</p>
+                <div class="pt-6 text-sm">
+                    <div class="font-semibold">Tyler Kane</div>
+                    <div class="text-slate-500">Co-Founder, Loft Finance</div>
+                </div>
+            </div>
+            
+            <div class="modern-card rounded-3xl border border-slate-200 bg-white p-8">
+                <div class="flex gap-1 text-amber-500 mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="leading-snug">"We went from a 2.1% conversion to 18.4%. Our website finally matches the quality of our product."</p>
+                <div class="pt-6 text-sm">
+                    <div class="font-semibold">Ava Rhodes</div>
+                    <div class="text-slate-500">Founder, NotionFlow</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div id="contact-section" class="max-w-screen-xl mx-auto px-8 py-12">
+        <div class="rounded-[3rem] border p-16 bg-white shadow-sm" id="contact-form">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center">
+                    <div class="font-display tracking-tight text-6xl font-semibold">Let's build<br>something great together.</div>
+                    <p class="mt-3 text-lg text-slate-600">Fill in the form below. We’ll reply within minutes.</p>
+                </div>
+                
+                <form id="form" class="max-w-md mx-auto pt-10 space-y-4" onsubmit="handleSubmit(event)">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <input type="text" placeholder="Full name" class="border px-5 h-12 w-full rounded-2xl" required>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Company" class="border px-5 h-12 w-full rounded-2xl" required>
+                        </div>
+                    </div>
+                    <input type="email" placeholder="Work email" class="border px-5 h-12 w-full rounded-2xl" required>
+                    <div class="pt-1">
+                        <button type="submit" 
+                                class="w-full mt-1 h-14 flex items-center justify-center bg-black hover:bg-emerald-600 transition-colors text-white text-lg rounded-[2rem] font-semibold">
+                            Request a 15-minute strategy call
+                        </button>
+                    </div>
+                    <div class="text-xs text-center text-slate-400 pt-2">No obligation. Cancel anytime.</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-xs py-6 border-t text-center text-slate-400">
+        &copy; 2026 ApexForge • Built to convert.
+    </footer>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#6366f1');
+        }
+        
+        // GSAP + ScrollTrigger Animations
+        function initAnimations() {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Navbar scroll effect
+            const nav = document.getElementById('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 60) {
+                    nav.classList.add('nav-scrolled', 'shadow-sm');
+                } else {
+                    nav.classList.remove('nav-scrolled', 'shadow-sm');
+                }
+            });
+            
+            // Hero animations on load
+            const heroTl = gsap.timeline();
+            
+            heroTl.fromTo('.hero-bg', { opacity: 0.85 }, { opacity: 1, duration: 0.6 });
+            
+            // Staggered stat numbers
+            ScrollTrigger.create({
+                trigger: "#results",
+                start: "top 70%",
+                onEnter: () => animateCounters()
+            });
+            
+            // Scroll reveal animations
+            gsap.utils.toArray('.scroll-reveal, .fact-card, .modern-card').forEach((el, i) => {
+                gsap.to(el, {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    delay: i * 0.07,
+                    ease: "power3.out"
+                });
+            });
+            
+            // Text fade-ins in hero
+            gsap.fromTo("[data-animate='hero-text']", 
+                { opacity: 0, y: 40 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    stagger: 0.08,
+                    delay: 0.35,
+                    duration: 1,
+                    ease: "power3.out"
+                }
+            );
+            
+            // Mockup hover tilt
+            const mockup = document.querySelector('.website-mockup');
+            if (mockup) {
+                mockup.addEventListener('mousemove', (e) => {
+                    const rect = mockup.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) - 0.5;
+                    const y = ((e.clientY - rect.top) / rect.height) - 0.5;
+                    gsap.to(mockup, { 
+                        rotationY: x * 12, 
+                        rotationX: -y * 17, 
+                        duration: 0.6,
+                        ease: "power2.out"
+                    });
+                });
+                
+                mockup.addEventListener('mouseleave', () => {
+                    gsap.to(mockup, { rotationY: 0, rotationX: 0, duration: 0.6 });
+                });
+            }
+        }
+        
+        // Animate stat counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('#results .tabular-nums');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 1.6;
+                
+                gsap.to(counter, {
+                    duration: duration,
+                    innerText: target,
+                    ease: "power2.out",
+                    onUpdate: function() {
+                        const current = Math.round(this.targets()[0].innerText);
+                        if (counter.getAttribute('data-target') == '241') {
+                            counter.innerHTML = current + '%';
+                        } else if (counter.getAttribute('data-target') == '2.8') {
+                            counter.innerHTML = current / 10 + '×';
+                        } else {
+                            counter.innerHTML = current;
+                        }
+                    }
+                });
+            });
+        }
+        
+        // Form submission handler
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            btn.style.transitionDuration = '0.1s';
+            btn.innerHTML = `Submitting...`;
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.style.background = '#166534';
+                btn.innerHTML = `✓ Request received. We'll email you shortly.`;
+                
+                setTimeout(() => {
+                    alert("Thank you! A member of the ApexForge team will contact you within 15 minutes.");
+                    e.target.reset();
+                    btn.style.background = '';
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }, 2000);
+            }, 1400);
+        }
+        
+        // Boot all animations + cool effects
+        function initializeEverything() {
+            initializeTailwind();
+            initAnimations();
+            
+            // Easter egg: konami code for "convert" mode (bonus effect)
+            let konami = [];
+            const secret = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+            
+            document.addEventListener('keydown', function(e) {
+                konami.push(e.keyCode);
+                if (konami.length > secret.length) konami.shift();
+                
+                if (JSON.stringify(konami) === JSON.stringify(secret)) {
+                    document.body.style.transitionDuration = '120ms';
+                    document.body.style.filter = 'hue-rotate(43deg)';
+                    
+                    setTimeout(() => {
+                        const success = document.createElement('div');
+                        success.innerHTML = `<div class="fixed inset-0 flex items-center justify-center z-[90] bg-black/90 text-white text-center"><div><span class='font-display text-8xl'>You're ready.</span><br>Let ApexForge build it.</div></div>`;
+                        document.body.appendChild(success.children[0]);
+                    }, 400);
+                    
+                    konami = [];
+                }
+            });
+            
+            // Show ready
+            console.log('%c[ApexForge] One-page high-converting site ready.', 'color:#64748b');
+        }
+        
+        window.onload = initializeEverything;
+    </script>
+</body>
+</html>
